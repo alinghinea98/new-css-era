@@ -17,16 +17,17 @@ img {
 }
 
 @keyframes spin {
+    from {
+        transform: rotateY(0turn) scale(0);
+    }
     to {
-        transform: rotateY(5turn);
+        transform: rotateY(5turn) scale(2);
     }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: scroll()) {
-        img {
-          animation: spin linear both;
-          animation-timeline: scroll();
-        } 
-      }
+    img {
+        animation: spin linear both 5s;
+        /*animation-timeline: scroll();*/
+    }
 }
